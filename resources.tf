@@ -17,7 +17,7 @@ resource "aws_instance" "prd-ge-boot" {
    vpc_security_group_ids = ["${aws_security_group.sgboot.id}"]
    associate_public_ip_address = true
    source_dest_check = false
-   private_ip = "10.0.2.10"
+   private_ip = "192.168.0.10"
    user_data = "${replace(data.template_file.user_data.rendered, "%%HOSTNAME%%", "prd-ge-boot")}"
    #user_data = "${file("scripts/install.sh")}"
 
