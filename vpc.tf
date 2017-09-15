@@ -12,7 +12,7 @@ resource "aws_vpc" "ge_aws" {
 resource "aws_subnet" "public-subnet" {
   vpc_id = "${aws_vpc.ge_aws.id}"
   cidr_block = "${var.public_subnet_cidr}"
-  availability_zone = "eu-west-1"
+  availability_zone = "eu-west-1c"
 
   tags {
     Name = "Web Public Subnet"
@@ -23,7 +23,7 @@ resource "aws_subnet" "public-subnet" {
 resource "aws_subnet" "private-subnet" {
   vpc_id = "${aws_vpc.ge_aws.id}"
   cidr_block = "${var.private_subnet_cidr}"
-  availability_zone = "eu-west-1"
+  availability_zone = "eu-west-1a"
 
   tags {
     Name = "Controllers Private Subnet"
