@@ -9,7 +9,7 @@ data "template_file" "user_data" {
 }
 
 # Define the Boot Node
-resource "aws_instance" "prd-ge-boot.ie.p16n.org" {
+resource "aws_instance" "prd-ge-boot" {
    ami  = "${var.ami}"
    instance_type = "c3.large"
    key_name = "${aws_key_pair.default.id}"
